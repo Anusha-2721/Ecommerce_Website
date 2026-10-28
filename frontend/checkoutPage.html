@@ -113,7 +113,7 @@ Place Order
 async function placeOrder(event) {
   event.preventDefault();
 
-  let cartRes = await fetch("http://localhost:5000/api/cart/1");
+  let cartRes = await fetch("https://ecommerce-website-n3ur.onrender.com/api/cart/1");
   let cart = await cartRes.json();
 
   if (cart.length === 0) {
@@ -138,7 +138,7 @@ async function placeOrder(event) {
     total: total
   };
 
-  let res = await fetch("http://localhost:5000/api/orders", {
+  let res = await fetch("https://ecommerce-website-n3ur.onrender.com/api/orders", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
